@@ -16,6 +16,19 @@
 <div style="height: 500px">
     <h1><my:Locale value="index.header.university"/></h1>
     <img src="images/cat.jpg" align="left" width="450" height="281"/>
+    <form method="POST" action="${pageContext.request.contextPath}/mail" enctype="multipart/form-data">
+        <div class="form-group">
+            <label><my:Locale value="index.mail.recipient"/></label>
+            <input type="text" class="form-control-text" name="recipient" id="recipient" required>
+        </div>
+
+        <div class="form-group">
+            <label><my:Locale value="index.mail.message"/></label>
+            <textarea style="width: 350px" type="text" class="form-control" name="message" id="message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary"><my:Locale value="index.mail.send"/></button>
+    </form>
 </div>
 <div>
     <form method="POST" action="${pageContext.request.contextPath}/db_students" enctype="multipart/form-data">
